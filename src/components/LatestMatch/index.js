@@ -2,36 +2,42 @@ import './index.css'
 
 const LatestMatch = ({matchDetails}) => {
   const {
-    competing_team_logo: logo,
-    competing_team: name,
+    competing_team: competingTeam,
     date,
     venue,
     result,
-    umpires, // Extract umpires here
-    first_innings,
-    second_innings,
-    man_of_the_match,
-  } = matchDetails || {}
+    competing_team_logo: competingTeamLogo,
+    first_innings: firstInnings,
+    second_innings: secondInnings,
+    man_of_the_match: manOfTheMatch,
+    umpires,
+  } = matchDetails
 
   return (
     <div className="latest-match-container">
-      <h2>Latest Match</h2>
-      <div className="latest-match-details">
+      <div className="latest-match-top">
         <img
-          src={logo}
-          alt={`latest match ${name}`}
-          className="latest-match-logo"
+          src={competingTeamLogo}
+          alt={competingTeam}
+          className="team-logo"
         />
-        <div className="latest-match-info">
-          <p>{name}</p>
-          <p>{date}</p>
-          <p>{venue}</p>
-          <p>{result}</p>
-          <p>{umpires}</p> {/* Render umpires here */}
-          <p>First Innings: {first_innings}</p>
-          <p>Second Innings: {second_innings}</p>
-          <p>Man of the Match: {man_of_the_match}</p>
+        <div className="latest-match-details">
+          <p className="competing-team">{competingTeam}</p>
+          <p className="match-date">{date}</p>
+          <p className="match-venue">{venue}</p>
+          <p className="match-result">{result}</p>
         </div>
+      </div>
+      <hr />
+      <div className="latest-match-info">
+        <p className="label">First Innings</p>
+        <p className="info">{firstInnings}</p>
+        <p className="label">Second Innings</p>
+        <p className="info">{secondInnings}</p>
+        <p className="label">Man of the Match</p>
+        <p className="info">{manOfTheMatch}</p>
+        <p className="label">Umpires</p>
+        <p className="info">{umpires}</p>
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import TeamCard from '../TeamCard'
 import './index.css'
@@ -34,7 +34,7 @@ const Home = () => {
         <h1 className="header-title">IPL Dashboard</h1>
       </div>
       {isLoading ? (
-        <div testid="loader">
+        <div data-testid="loader">
           <Loader type="Oval" color="#ffffff" height={50} width={50} />
         </div>
       ) : (

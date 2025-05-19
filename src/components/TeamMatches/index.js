@@ -34,11 +34,13 @@ const TeamMatches = () => {
 
   return (
     <div className="team-matches-container">
-      {isLoading ? (
-        <div testid="loader">
+      {isLoading && (
+        <div data-testid="loader">
           <Loader type="Oval" color="#ffffff" height={50} width={50} />
         </div>
-      ) : teamData ? (
+      )}
+
+      {!isLoading && teamData && (
         <>
           <img
             src={teamData.teamBannerUrl}
@@ -47,17 +49,17 @@ const TeamMatches = () => {
           />
           <LatestMatch matchDetails={teamData.latestMatchDetails} />
           <ul className="recent-matches-list">
-            {teamData.recentMatches.map((match, index) => (
+            {teamData.recentMatches.map(match => (
               <MatchCard
-                key={`${match.competing_team}_${index}`} // Unique key per list item
+                key={match.id || match.competing_team}
                 matchDetails={match}
               />
             ))}
           </ul>
         </>
-      ) : (
-        <p>No team data available</p>
       )}
+
+      {!isLoading && !teamData && <p>No team data available</p>}
     </div>
   )
 }
