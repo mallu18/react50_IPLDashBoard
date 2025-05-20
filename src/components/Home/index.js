@@ -23,6 +23,30 @@ const Home = () => {
     fetchTeams()
   }, [])
 
+  // return (
+  //   <div className="home-container">
+  //     <div className="header">
+  //       <img
+  //         src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
+  //         alt="ipl logo"
+  //         className="ipl-logo"
+  //       />
+  //       <h1 className="header-title">IPL Dashboard</h1>
+  //     </div>
+  //     {isLoading ? (
+  //       <div data-testid="loader">
+  //         <Loader type="Oval" color="#ffffff" height={50} width={50} />
+  //       </div>
+  //     ) : (
+  //       <ul className="teams-list">
+  //         {teams.map(team => (
+  //           <TeamCard key={team.id} team={team} />
+  //         ))}
+  //       </ul>
+  //     )}
+  //   </div>
+  // )
+
   return (
     <div className="home-container">
       <div className="header">
@@ -33,11 +57,14 @@ const Home = () => {
         />
         <h1 className="header-title">IPL Dashboard</h1>
       </div>
-      {isLoading ? (
-        <div data-testid="loader">
+
+      {isLoading && (
+        <div className="loader-container" data-testid="loader">
           <Loader type="Oval" color="#ffffff" height={50} width={50} />
         </div>
-      ) : (
+      )}
+
+      {!isLoading && (
         <ul className="teams-list">
           {teams.map(team => (
             <TeamCard key={team.id} team={team} />

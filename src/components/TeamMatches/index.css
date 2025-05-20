@@ -1,1 +1,28 @@
 /* Write your CSS here */
+.team-matches-container {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.team-banner {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.recent-matches-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}

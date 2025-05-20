@@ -1,1 +1,25 @@
 /* Write your CSS here */
+.match-card {
+  background-color: #0f172a;
+  padding: 16px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.match-card-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.match-status.won {
+  color: green;
+  font-weight: bold;
+}
+
+.match-status.lost {
+  color: red;
+  font-weight: bold;
+}

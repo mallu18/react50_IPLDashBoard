@@ -18,9 +18,10 @@ const LatestMatch = ({matchDetails}) => {
       <div className="latest-match-top">
         <img
           src={competingTeamLogo}
-          alt={competingTeam}
+          alt={`latest match ${competingTeam}`}
           className="team-logo"
         />
+
         <div className="latest-match-details">
           <p className="competing-team">{competingTeam}</p>
           <p className="match-date">{date}</p>

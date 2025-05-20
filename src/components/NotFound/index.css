@@ -1,1 +1,12 @@
 /* Write your CSS here */
+.not-found-container {
+  background-color: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+.not-found-heading {
+  font-size: 36px;
+}
